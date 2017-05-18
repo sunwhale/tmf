@@ -226,3 +226,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# My
+Figs/
+Chapter3Figs/
+Chapter4Figs/
+Chapter5Figs/
+Chapter6Figs/
