@@ -1,0 +1,67 @@
+Ms. Ref. No.:  JMAD-D-17-03511
+Title: Cyclic Plasticity Modeling of Multi-Axial Thermo-Mechanical Fatigue Tests with Experimental Verification on  Nickel-Based Superalloy Inconel 718
+Materials and Design
+
+Dear Professor Huang Yuan,
+
+The reviewers and editors of your manuscript have identified significant and substantial deficiencies of your submission. In view of the increasingly stiff competition for space and impact in Materials & Design, I have reached the decision that this submission should not be considered any further.*
+
+For your guidance, the comments are included below.
+
+Thank you for giving us the opportunity to consider your work.
+
+Yours sincerely,
+
+Xu Song, DPhil
+Editor
+Materials and Design
+
+Reviewers' comments:
+
+
+Reviewer #1: Within the frame of the Ohno-Wang cyclic plasticity a modified constitutive model has been proposed to consider the effects of TMF and non-proportional loading on the mechanical behavior of Incone718 alloy. Many tests have been conducted under isothermal and TMF loading conditions to identify the availability of the modified constitutive model. The results showed that the modified constitutive model in the present study was able to characterize the complex mechanical behavior including TMF and non-proportional loading paths.
+
+1. On page 1 the authors cited reference[9] to show that Inconel 718 exhibited a pronounced initial cyclic hardening then became continuous cyclic softening at high strain amplitudes. The modified constitutive model was proposed based on the initial cyclic hardening and followed by softening behavior stated above. However, Inconel 718 exhibited continuous cyclic softening throughout its whole life in the present study, no matter isothermal condition or TMF loading condition. How do you explain this?
+
+2. On page 2 the authors cited reference[15] to illustrate the TMF behavior of the austenitic stainless steel AISI304L and the near-<gamma> TiAl alloy. I didn't see what you would explain, and I think it was redundant.
+
+3. On page 2 the statement "neither non-proportionality nor multi-axiality of the applied loads was considered under thermo-mechanical cyclic loading conditions" was absolute and one-sided. In fact, there are lots of open literatures with respect to TMF considering non-proportionality and/or multi-axiality of the applied loads. The authors had better to consider the given advices above.
+
+4. Experiments equipped with an electric resistance furnace and an induction heating system in this study were carried out by MTS 809. Calibration tests confirmed that both heat systems generated comparable testing results, so that effects of heating systems can be neglected. What kind of tests have been conducted? Please give the relevant test results generated from both heating systems above.
+
+5. In the present work the maximum temperature deviation was 5℃ along the 12mm gauge length and 8℃ along the 25mm gauge length. I think this statement is not accurate enough, because the temperature deviation usually varies with different temperature range. Please confirm and check the temperature deviation with the temperature 20℃, 300℃ and 550℃。
+
+6. On page 6 the authors cited reference [26] to illustrate that the peak stresses were not monotonic to plastic strain at the hysteresis loops of the austenite stainless steel. Meanwhile, the material showed initial hardening and followed by softening.  Are the statements above relevant with the present study? Dose Inconel 718 alloy have the similar hardening or/and softening behavior with the austenite stainless steel?
+
+7. On page 6 the authors have modified the cyclic hardening equation which can predict the better results consistent with the tested results shown in Fig.4. Can you give the clear physical mechanisms about it?
+
+
+
+
+Reviewer #3: In this research thermo-mechanical cyclic tests (uniaxial and multiaixial) were carried out and the results were modeled by a modified O-W model.
+My comments as the order of appearance are:
+1. It should be clarified in the title and the abstract that the experiments are displacement controlled tests.
+2. Why the stress-control tests which are more important in cyclic loading were not carried out and modeled?
+3. In page 3, 2nd co;umn, 1st paragraph, there two different failure criteria were defined.
+4. It was noted in teh abstract that a modified constitutive model was used. I have not teh modifications bu just a combination of difeent models for kinematic and isotropic hardening. It should be explained the modifications.
+5. In 5th section, It was mentioned that the parameters of the model were determined from the uniaxial tests. It seems that some of the parameters were determined for multiaixal loading. That should be clarified.
+6. It is a confusion in the text between equivalent plastic strain and accumulated plastic strain. It should be mentioned that which one is used. 
+7. Eq. 47  has undefined variables.
+8. The text needs entire English verification.
+
+One of my major comments is that, It was not clarified what are the thermal loading in section 6.3? Is there any thermal stress because of temperature gradient? It is not explained. It was told the thermomechanical loading but there is any temperature gradient or thermal stress. so it is wrong to call thermo-mechanical loading because of homogeneous elevated temperature.  
+
+
+
+
+
+Reviewer #7: This paper proposed a modified constitutive model for the multi-axial thermal-mechanical fatigue (TMF) behaviors of Inconel 718. Systematic experiments with different applied loadings were carried out, whose results were found to be well captured by the proposed model. However, the manuscript is poorly organized, making it difficult to clearly transfer the author's idea. Therefore I can hardly recommend the publication of this paper. My comments are listed as below:
+1.	The keywords in the graphical abstract are not consistent with those in manuscript. 
+2.	The focus of this work is not very clear. Please explicitly explain why you want to carry out isothermal LCF test. Since the title of this manuscript is "Cyclic Plasticity Modeling of Multi-Axial Thermo-Mechanical Fatigue Tests with Experimental Verification on Nickel-Based Superalloy Inconel 718", it would be better either to revise the content or change the title.
+3.	A lot of grammatical, syntax and word usage errors can be found in the text and should be carefully examined afterwards. To name a few, "et al" is usually for persons and is incorrectly used by the author. It should be in consistent whether you want to use "thermal-mechanical" or "thermo-mechanical". Some references (e.g., Ref 15) have no clear meaning in this manuscript. In page 2, it was described that "Development of a reliable cyclic plasticity with experimental verification…". The usage of the object is confusing although we can understand that it refers to the plastic model here.
+4.	In section 2.2: "Failure was deemed to have occurred if the peak load dropped 15% from the stabilized peak. a 20% load drop In comparing with the maximum load was defined as failure, corresponding to nucleation of macro cracks." I should say it is a disaster for me to understand its original meaning. I cannot even understand the logic between the 2 numbers (15% & 20%), not to mention a clear clerical error in the sentence.
+5.	The last paragraph in section 2.2 is talking about thermo-mechanical experiments, though the sub-title of this section is "isothermal tests". Moreover, section 2.3 is about thermo-mechanical fatigue tests. It is totally confused.
+6.	Alphabetical numbering such as (a) or (b) should be added in Fig. 1、5、7、8、9、10、11 and 12, as corresponding to the related captions.
+7.	It is not necessary to introduce everything in one paper, especially some basic concepts.
+8.	In Figure 5, it was said in the manuscript that: "The figure illustrates results for first loading cycles and the 200th cycles at 300◦C, 550◦C and 650◦C, respectively." Please explain why you use the 200th cycle results. A more reasonable way is to use the half life time instead.
+9.	The references are relatively out-of-date. The latest reference was published in 2015, one and only. It is recommended to check some new progress in this field.
