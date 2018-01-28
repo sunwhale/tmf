@@ -55,7 +55,10 @@
 \newcommand{\bfH}{{\bf H}}
 \newcommand{\dd}{{\rm d}}
 \newcommand{\marked}[1]{\textcolor{red}{#1}}
-\graphicspath{{figs/}}
+
+\graphicspath{{F:/Cloud/GitHub/tmf/figs/}{F:/Cloud/GitHub/doctor/figs/}{F:/Cloud/GitHub/doctor/figs/python/}{F:/Cloud/GitHub/doctor/figs/ppt/}{F:/Cloud/GitHub/doctor/figs/svg/}{F:/Cloud/GitHub/doctor/figs/sem/}}
+
+% \graphicspath{{figures/}}
 
 %\bibliographystyle{elsarticle-num}
 
@@ -162,7 +165,7 @@ The chemical composition of the nickel-based superalloy Inconel 718 in the resea
 \end{table*}%
 
 
-\begin{figure}[!htp]
+\begin{figure}
 \centering{\includegraphics[width=8.5cm]{IN718_Axial_Specimen.pdf}}
 \centering{\includegraphics[width=8.5cm]{IN718_Multiaxial_Specimen.pdf}}
 \caption{Geometry of the specimens investigated in the present work. (a) The solid cylindrical tensile bar. (b) The tubular specimen for tension-torsion tests.}
@@ -175,8 +178,8 @@ Specimens are illustrated in Figure \ref{Fig:Specimen}, with the surface roughne
 Experiments were performed in the MTS servo hydraulic test system (MTS 809) equipped with  an electric resistance furnace and an induction heating system. Calibration tests confirmed that both heat systems generated comparable testing results, so that effects of heating systems can be neglected. The system is capable of applying axial and biaxial loads with temperature controlled simultaneously.
 
 \begin{figure*}
-\centering{\includegraphics[width=8.0cm]{Figs/plot_thermal_stability.pdf}}
-\centering{\includegraphics[width=8.0cm]{Figs/plot_thermal_stability_deviation.pdf}}
+\centering{\includegraphics[width=8.0cm]{plot_thermal_stability.pdf}}
+\centering{\includegraphics[width=8.0cm]{plot_thermal_stability_deviation.pdf}}
 \caption{\marked{Thermal stability tests. (a) The temperature of three temperature monitor during a testing cycle. (b) Temperature deviation in axial direction.}}
 \label{Fig:thermal_stability}
 \end{figure*}
@@ -283,7 +286,7 @@ The cyclic tests were quitted at 50,000 loading cycles.
     \includegraphics[width=4.5cm]{load_path_6.pdf}
     \centerline{\small (f) Circle(CIRC) Path.}
   \end{minipage}
-  \caption{Strain paths in isothermal tests.}
+  \caption{Strain paths in isothermal and TMF tests.}
   \label{Fig:LoadPath}
 \end{figure}
 
@@ -553,7 +556,6 @@ Noting that the strain memory effect is taken into account, $q$ is the radius of
 If the material shows Massing behavior,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
 
 \section{Integration algorithm of the constitutive equations}
-\label{}
 The implicit algorithm of the constitutive equation should provide the stress increment and the plastic strain increment, based on the given strain increment.
 The backward Euler method is a first order implicit method popularly used in the finite element method. Considering the integration interval from Step $n$ to Step $n+1$, variables of Step $n$ are denoted by the index $n$. The symbol $\Delta$ indicates the increment of the variable from $n$ to $n+1$. It is assumed that the strain increment can be decomposed in the current configuration, as
 \begin{equation}
@@ -585,10 +587,10 @@ Taking the deviatoric part of Equation (\ref{Equ:sigma1}) follows
 {\bfs} = \bfs^{tr} - 2G\Delta \bfepsilon^p.
 \end{equation}
 
-\begin{figure}[!htp]
-\centering{\includegraphics[width=9cm]{Chapter4Figs/radial_return_map.pdf}}
+\begin{figure}
+\centering{\includegraphics[width=9cm]{radial_return_map.pdf}}
 \caption{Schematics of the two steps radial return map method.}
-\label{}
+\label{Fig:radial_return_map}
 \end{figure}
 
 A two steps radial return map method proposed by  Kobayashi and Ohno \cite{kobayashi2002implementation} are employed for integrating the present constitutive model. The backstress is written as
@@ -714,7 +716,7 @@ parameters $\mu$ and $c_c$ are suggested as the values proposed by Chaboche \cit
 %\label{Fig:EpVsPeakStress300C_7041}
 %\end{figure}
 
-\begin{figure}[!htp]
+\begin{figure}
 \centering{\includegraphics[width=8.5cm]{Fitting300C_7041_Plot.pdf}}
 \caption{Kinematic hardening from the full reversed strain cycling tests with comparison to different hardening models of $r^k$.}
 \label{Fig:Fitting300C_7041_Plot}
@@ -810,8 +812,6 @@ According to isothermal uniaxial monotonic tension tests and  cyclic stress-stra
 \section{Computational analysis}
 
 \subsection{Simulations of isothermal fatigue tests}
-\label{}
-
 
 \begin{figure*}
 \centering{\begin{overpic}[width=8.5cm]{IN718_Isothermal_1st.pdf}
