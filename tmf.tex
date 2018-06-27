@@ -16,6 +16,8 @@
 \usepackage{textcomp}
 \usepackage{subfigure}
 \usepackage{natbib}
+\usepackage[Symbol]{upgreek}
+\usepackage{bm}
 \usepackage[colorlinks,linkcolor=red,
                             anchorcolor=blue,
                             citecolor=blue]{hyperref}
@@ -25,16 +27,22 @@
 \usepackage{ulem}
 \usepackage{overpic}
 \usepackage{caption}
+\usepackage{array}
+\usepackage{framed}
 
-\newcommand{\bfsigma}{{\mbox{\boldmath{$\sigma$}}}}
-\newcommand{\bfepsilon}{{\mbox{\boldmath{$\varepsilon$}}}}
-\newcommand{\dotbfepsilon}{{\mbox{\boldmath{$\dot\varepsilon$}}}}
+% \newcommand{\bfsigma}{{\mbox{\boldmath{$\sigma$}}}}
+% \newcommand{\bfepsilon}{{\mbox{\boldmath{$\varepsilon$}}}}
+% \newcommand{\dotbfepsilon}{{\mbox{\boldmath{$\dot\varepsilon$}}}}
+\newcommand{\bfsigma}{{\bm{\upsigma}}}
+\newcommand{\dotbfepsilon}{{\dot{\bm{\upepsilon}}}}
+\newcommand{\bfepsilon}{{\bm{\upepsilon}}}
 \newcommand{\dotbfsigma}{{\mbox{\boldmath{$\dot\sigma$}}}}
 \newcommand{\bftau}{{\mbox{\boldmath{$\tau$}}}}
 \newcommand{\bfpsi}{{\mbox{\boldmath{$\psi$}}}}
 \newcommand{\bfphi}{{\mbox{\boldmath{$\phi$}}}}
 \newcommand{\bfalpha}{{\mbox{\boldmath{$\alpha$}}}}
-\newcommand{\bfbeta}{{\mbox{\boldmath{$\beta$}}}}
+% \newcommand{\bfbeta}{{\mbox{\boldmath{$\beta$}}}}
+\newcommand{\bfbeta}{{\bm{\upbeta}}}
 \newcommand{\bfK}{{\bf K}}
 \newcommand{\bff}{{\bf f}}
 \newcommand{\bfn}{{\bf n}}
@@ -379,7 +387,7 @@ The thermal strain varying with temperature was determined before the TMF tests 
 \noindent
 In the framework of the rate independent and initially isotropic plasticity, the strain rate can be additively decomposed into the elastic and plastic  part, as
 \begin{equation}
-\dotbfepsilon = {\dotbfepsilon}^e + {\dotbfepsilon}^p.
+\dotbfepsilon = {\dotbfepsilon}^e + {\dotbfepsilon}^{\rm p}.
 \end{equation}
 The elastic strain and total stress are subjected to Hooke's law,
 \begin{equation}
@@ -390,7 +398,7 @@ where ${\mathbb{D}^e}$ is the fourth-order isotropic elastic stiffness tensor. H
 
 The evolution of the plastic strain can be determined from the flow rule as
 \begin{equation}
-{\dotbfepsilon}^p = \dot \lambda \frac{{\partial F}}{{\partial {\bfsigma}}}
+{\dotbfepsilon}^{\rm p} = \dot \lambda \frac{{\partial F}}{{\partial {\bfsigma}}}
 \end{equation}
 with
 \begin{equation}
@@ -407,7 +415,7 @@ where $M$ denotes the number of partial backstresses.
 Following suggestions by D\"orring et al. \cite{Doerring2003} and Abdel Karim et al. \cite{AbdelKarim20051303}, Fang \cite{fang2015cyclic} suggested that the evolution equation of the backstress can be expressed as
 \begin{equation}
 \label{Equ:dotak1}
-{\dot\bfa^k} = {h^k}\frac{2}{3}{\dotbfepsilon^p} - H\left( {{f^k}} \right){\dot \omega ^k}\frac{{{\bfa^k}}}{{{r^k}}},
+{\dot\bfa^k} = {h^k}\frac{2}{3}{\dotbfepsilon^{\rm p}} - H\left( {{f^k}} \right){\dot \omega ^k}\frac{{{\bfa^k}}}{{{r^k}}},
 \end{equation}
 where ${{{h}}^k} $ and ${{{r}}^k} $ are the state variables introduced to describe cyclic plasticity of the material, $r^k$ is a function of accumulated plastic strain, i.e. ${r^k} = {r^k}\left( p \right)$.  Note no summation convention is applied for $k$. ${{{f}}^k} $ defines a series of the critical state surface in the deviatoric stress space,
 \begin{equation}
@@ -418,17 +426,17 @@ Above  $H(\cdot)$ denotes the Heaviside step function. According to Eq. (\ref{Eq
 \begin{eqnarray}
 \label{Equ:dotfk}
 {\dot f^k} &=& 3{\bfa^k}:{\dot\bfa^k} - 2{r^k}{\dot r^k} \\ \nonumber
-&=& 3{\bfa^k}:\left[ {{h^k}\frac{2}{3}{{\dotbfepsilon}^p} - H\left( {{f^k}} \right){{\dot \omega }^k}\frac{{{\bfa^k}}}{{{r^k}}}} \right] - 2{r^k}{\dot r^k} = 0.
+&=& 3{\bfa^k}:\left[ {{h^k}\frac{2}{3}{{\dotbfepsilon}^{\rm p}} - H\left( {{f^k}} \right){{\dot \omega }^k}\frac{{{\bfa^k}}}{{{r^k}}}} \right] - 2{r^k}{\dot r^k} = 0.
 \end{eqnarray}
 When $H\left( {{f^k}} \right) = 1$, it results in
 \begin{equation}
 \label{Equ:dotomegak}
-{\dot \omega ^k} = {h^k}\frac{{{\bfa^k}}}{{{r^k}}}:{\dotbfepsilon^p} - {\dot r^k}.
+{\dot \omega ^k} = {h^k}\frac{{{\bfa^k}}}{{{r^k}}}:{\dotbfepsilon^{\rm p}} - {\dot r^k}.
 \end{equation}
 Substituting ${\dot \omega ^k}$ into Eq. (\ref{Equ:dotak1}) follows
 \begin{eqnarray}
 \label{Equ:dotak2}\nonumber
-{\dot\bfa^k} &=& \frac{2}{3}{h^k}{\dotbfepsilon^p} - H\left( {{f^k}} \right){h^k}\left\langle {\frac{{{\bfa^k}}}{{{r^k}}}:{{\dotbfepsilon}^p}} \right\rangle \frac{{{\bfa^k}}}{{{r^k}}} \\
+{\dot\bfa^k} &=& \frac{2}{3}{h^k}{\dotbfepsilon^{\rm p}} - H\left( {{f^k}} \right){h^k}\left\langle {\frac{{{\bfa^k}}}{{{r^k}}}:{{\dotbfepsilon}^{\rm p}}} \right\rangle \frac{{{\bfa^k}}}{{{r^k}}} \\
 &+& H\left( {{f^k}} \right)\frac{{{\bfa^k}}}{{{r^k}}}{\dot r^k}
 \end{eqnarray}
 with $\left<\cdot\right>$ as the Macauley brackets.
@@ -436,9 +444,9 @@ with $\left<\cdot\right>$ as the Macauley brackets.
 Combining Eq. (\ref{Equ:dotak2}) with Armstrong and Frederick model as suggested by Adbel-Karim and Ohno  \cite{AbdelKarim20051303},  ${\bfa^k}$ obeys the following evolution rule, as
 \begin{eqnarray}
 \label{Equ:dotak3}
-{\dot\bfa^k} &=& {r^k}{\zeta ^k}\left[ \frac{2}{3}{{\dotbfepsilon}^p} - {\mu ^k}\frac{\bfa^k}{r^k}\dot p \right.
+{\dot\bfa^k} &=& {r^k}{\zeta ^k}\left[ \frac{2}{3}{{\dotbfepsilon}^{\rm p}} - {\mu ^k}\frac{\bfa^k}{r^k}\dot p \right.
 \\ \nonumber
-&-& \left.  H\left( {f^k} \right) \left\langle {\frac{\bfa^k}{r^k}:{\dotbfepsilon}^p} - {\mu ^k}\dot p \right\rangle \frac{\bfa^k}{r^k} \right]
+&-& \left.  H\left( {f^k} \right) \left\langle {\frac{\bfa^k}{r^k}:{\dotbfepsilon}^{\rm p}} - {\mu ^k}\dot p \right\rangle \frac{\bfa^k}{r^k} \right]
 + H\left( {f^k} \right)\frac{\bfa^k}{r^k}{\dot r^k},
 \end{eqnarray}
 where ${\zeta ^k}$ is the material constant related to ${h^k} = {r^k}{\zeta ^k}$. ${\mu ^k}$ is the combination parameter with $0 \leqslant {\mu ^k} \leqslant 1$. When ${\dot r^k} = 0$ and ${\mu ^k} = 0$, the modified model here is reduced to the known Ohno and Wang model. For ${\dot r^k} = 0$ and ${\mu ^k} = 1$, the  model above is reduced to the Armstrong and Frederick model. Thus, for large ${\mu ^k}$, the present model predicts more significant ratcheting and cyclic stress relaxation.
@@ -455,7 +463,7 @@ with
 \end{equation}
 It follows
 \begin{equation}
-{\dot\bfb^k} = {\zeta ^k}\left( {\frac{2}{3}{\dotbfepsilon^p} - {\bfb^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{\bfb^k},
+{\dot\bfb^k} = {\zeta ^k}\left( {\frac{2}{3}{\dotbfepsilon^{\rm p}} - {\bfb^k}{{\dot p}^k}} \right) + \left[ {H\left( {{f^k}} \right) - 1} \right]\frac{{{{\dot r}^k}}}{{{r^k}}}{\bfb^k},
 \end{equation}
 \begin{equation}
 {\dot p^k} = \left[ {{\mu ^k} + H\left( {{f^k}} \right)\left\langle {\sqrt {\frac{3}{2}} {\bfb^k}:\bfn - {\mu ^k}} \right\rangle } \right]\dot p,
@@ -477,8 +485,8 @@ which can be identified from the monotonic tension curve and cyclic tension-comp
 Above $r_\Delta ^k$ is assumed to depend on the accumulated plastic strain $p$,
 \begin{equation}
 \label{Equ:rdeltak1}
-%r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} + a_2^k({e^{ - b_2^kp}} - {e^{ - b_3^kp}})} \right]
-r_\Delta ^k = r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right].
+%r_\Delta ^k = r_{\Delta \rm s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} + a_2^k({e^{ - b_2^kp}} - {e^{ - b_3^kp}})} \right]
+r_\Delta ^k = r_{\Delta \rm s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right].
 \label{Equ:rdeltak}
 \end{equation}
 The dependence on plastic strain allows more accurate description of the cyclic hardening as well as softening behavior of the material.
@@ -488,12 +496,12 @@ The dependence on plastic strain allows more accurate description of the cyclic 
 The plastic strain based memory surface proposed by Chaboche \cite{Chaboche1986149} is defined as
 \begin{equation}
 \label{Equ:g1}
-g = \sqrt {\frac{2}{3}\left( {{\bfepsilon^p} - \bfbeta} \right):\left( {{\bfepsilon^p} - \bfbeta} \right)}  - q,
+g = \sqrt {\frac{2}{3}\left( {{\bfepsilon^{\rm p}} - \bfbeta} \right):\left( {{\bfepsilon^{\rm p}} - \bfbeta} \right)}  - q,
 \end{equation}
 where $\bfbeta$ and $q$ represent the radius and center of the non-hardening surface, respectively.
-Updating of the memory state is only available when the current plastic strain is on the surface (i.e. $g=0$) and the flow direction is outwards of the surface, that is,
+Updating of the memory state is only available when the current plastic strain is on the surface (i.e., $g=0$), and the flow direction is outwards of the surface, that is,
 \[
-\frac{{\partial g}}{{\partial {\bfepsilon^p}}}:d{\bfepsilon^p} > 0.
+\frac{{\partial g}}{{\partial {\bfepsilon^{\rm p}}}}:d{\bfepsilon^{\rm p}} > 0.
 \]
 Above $\bfbeta$ and $q$ respectively obey the following evolution rules,
 \begin{equation}
@@ -507,24 +515,24 @@ Above $\bfbeta$ and $q$ respectively obey the following evolution rules,
 with
 \begin{equation}
 \label{Equ:nstar}
-{\bfn^*} = \frac{{\partial g}}{{\partial {\bfepsilon^p}}} = \frac{{{\bfepsilon^p} - \bfbeta}}{{\left\| {{\bfepsilon^p} - \bfbeta} \right\|}}.
+{\bfn^*} = \frac{{\partial g}}{{\partial {\bfepsilon^{\rm p}}}} = \frac{{{\bfepsilon^{\rm p}} - \bfbeta}}{{\left\| {{\bfepsilon^{\rm p}} - \bfbeta} \right\|}}.
 \end{equation}
 
 \subsection{Non-proportional hardening}
 \noindent
 In the article the non-proportional hardening is considered in an additional term of the isotropic hardening, as
 \begin{equation}
-Y = {Y_0} + {Y_{\Delta np}},
+Y = {Y_0} + {Y_{\Delta \rm np}},
 \end{equation}
-where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta np}}$ is the non-proportional hardening defined by
+where $Y_0$ denotes the yield stress for proportional loading and ${Y_{\Delta \rm np}}$ is the non-proportional hardening defined by
 \begin{equation}
-{\dot Y_{\Delta np}} = {\gamma _p}\left( {{Y_{\rm sat}} - {Y_{\Delta np}}} \right)\dot p.
+{\dot Y_{\Delta \rm np}} = {\gamma _{\rm p}}\left( {{Y_{\rm \Delta nps}} - {Y_{\Delta \rm np}}} \right)\dot p.
 \end{equation}
-Integrating the above equation with the initial condition ${Y_{\Delta np}}(0)=0$ follows
+Integrating the above equation with the initial condition ${Y_{\Delta \rm np}}(0)=0$ follows
 \begin{equation}
-{Y_{\Delta np}} = Y_{\rm sat}\left( 1-e^{- \gamma_p p} \right),
+{Y_{\Delta \rm np}} = Y_{\rm \Delta nps}\left( 1-e^{- \gamma_{\rm p} p} \right),
 \end{equation}
-where $Y_{\rm sat}$ is the saturated value of ${Y_{\Delta np}}$ under a non-proportional loading path.
+where $Y_{\rm \Delta nps}$ is the saturated value of ${Y_{\Delta \rm np}}$ under a non-proportional loading path.
 Tanaka introduced a non-proportionality factor \cite{tanaka1994nonproportionality},
 \begin{equation}
 \phi  = \sqrt {1 - \frac{{\bfn:\mathbb{C}:\mathbb{C}:\bfn}}{{\mathbb{C}::\mathbb{C}}}}
@@ -533,52 +541,54 @@ to quantify influence of the non-proportional load path to the material behavior
 \begin{equation}
 \dot {\mathbb{C}} = {c_c}\left( {\bfn \otimes \bfn - \mathbb{C}} \right)\dot p.
 \end{equation}
-Assuming ${Y_{\rm sat}}$ depending on the loading path follows the simplest form as
+Assuming ${Y_{\rm \Delta nps}}$ depending on the loading path follows the simplest form as
 \begin{equation}
-{Y_{\rm sat}} = \phi {Y_{\Delta NS}},
+{Y_{\rm \Delta nps}} = \phi {Y_{\Delta \rm NS}},
 \end{equation}
 with $0 \leq \phi \leq 1$.
-For the proportional loading $\phi = 0$, there is no non-proportional hardening, while $\phi = 1$ means ${Y_{\rm sat}} = {Y_{\Delta NS}}$ for the maximum non-proportional hardening.
+For the proportional loading $\phi = 0$, there is no non-proportional hardening, while $\phi = 1$ means ${Y_{\rm \Delta nps}} = {Y_{\Delta \rm NS}}$ for the maximum non-proportional hardening.
 
-According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta NS}}$ can be defined as
+According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta \rm NS}}$ can be defined as
 \begin{equation}
-{\dot Y_{\Delta NS}} = {\gamma _q}\left( {{Y_{\Delta 0}} - {Y_{\Delta NS}}} \right)\dot q.
+{\dot Y_{\Delta \rm NS}} = {\gamma _{\rm q}}\left( {{Y_{\Delta \rm sat}} - {Y_{\Delta \rm NS}}} \right)\dot q.
 \end{equation}
-Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _q}$ is a rate parameter.
-If the material satisfies the Masing postulate,  ${\gamma _q}=0$. $Y_{\Delta 0} $ denotes the saturate value of $Y_{\Delta NS}$.
+Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _{\rm q}}$ is a rate parameter.
+If the material satisfies the Masing postulate,  ${\gamma _{\rm q}}=0$. $Y_{\Delta \rm sat} $ denotes the saturate value of $Y_{\Delta \rm NS}$.
+
+\subsection{Integration algorithm of the constitutive equations}
 
 \section{Integration algorithm of the constitutive equations}
 \noindent
 The present constitutive model has included Tanaka non-proportional term and modified backstress equations for complex thermo-mechanical loads. The implicit algorithm of the constitutive equation becomes necessary and should provide the stress increment and the plastic strain increment, based on the given strain increment. The integration method is to be implemented into the commercial finite element codes, such as ABAQUS via the UMAT interface.
 The backward Euler method is a first order implicit method popularly used in the finite element computation. Considering the integration interval from Step $n$ to Step $n+1$, variables of Step $n$ are denoted by the index $n$. The symbol $\Delta$ indicates the increment of the variable from $n$ to $n+1$. It is assumed that the strain increment can be decomposed in the current configuration, as
 \begin{equation}
-{\Delta\bfepsilon} = \Delta\bfepsilon^e + \Delta\bfepsilon^p.
+{\Delta\bfepsilon} = \Delta\bfepsilon^e + \Delta\bfepsilon^{\rm p}.
 \end{equation}
 The stress increment can be determined from the Hooke's law as
 \begin{equation}
 \label{Equ:sigman+1}
-\Delta\bfsigma= {\mathbb{D}^e}:\left( {{\Delta\bfepsilon} - \Delta\bfepsilon^p} \right),
+\Delta\bfsigma= {\mathbb{D}^e}:\left( {{\Delta\bfepsilon} - \Delta\bfepsilon^{\rm p}} \right),
 \end{equation}
 where $\mathbb{D}^e$ represents the elasticity matrix, ${\mathbb{D}^e} = \kappa {\mathbf{I}} \otimes {\mathbf{I}} + 2G\mathbb{I}$ for elastically isotropic materials. Here $G$ is shear modulus and  $\kappa  = K - \frac{2}{3}G$  is Lame constant. ${\mathbf{I}}$ and $\mathbb{I}$ indicate the identity tensors of the second- and the fourth-order tensor, respectively, given in the component form as ${I_{ij}} = {\delta _{ij}}$ and ${\mathbb{I}_{ijkl}} = {\delta _{ik}}{\delta _{jl}}$ with ${\delta _{ij}}$ as Kronecker delta. $\otimes$ denotes the tensor product.
 
 The return mapping algorithm is popular in computational plasticity, consisting of elastic prediction and plastic correction. The elastic prediction is taken as the elastic tentative stress,
 \begin{equation}
-{\bfsigma}^{tr} = {\mathbb{D}^e}:\left( {{\bfepsilon} - \bfepsilon_n^p} \right).
+{\bfsigma}^{\rm tr} = {\mathbb{D}^e}:\left( {{\bfepsilon} - \bfepsilon_n^{\rm p}} \right).
 \end{equation}
 The relationship between the stress at Step $n+1$  and the trial stress is given through
 \begin{equation}
 \label{Equ:sigma1}
-{{\bfsigma}^{} = {\mathbb{D}^e}:\left( {\bfepsilon^{} - \bfepsilon^p} \right)} = {\bfsigma}^{tr} - 2G\Delta \bfepsilon^p.
+{{\bfsigma}^{} = {\mathbb{D}^e}:\left( {\bfepsilon^{} - \bfepsilon^{\rm p}} \right)} = {\bfsigma}^{\rm tr} - 2G\Delta \bfepsilon^{\rm p}.
 \end{equation}
-Note that, because of elastic isotropy and plastic incompressibility, $\Delta \bfepsilon^p$ is a deviatoric tensor with ${\rm Tr}\left( {\Delta \bfepsilon^p} \right)=0$.
+Note that, because of elastic isotropy and plastic incompressibility, $\Delta \bfepsilon^{\rm p}$ is a deviatoric tensor with ${\rm Tr}\left( {\Delta \bfepsilon^{\rm p}} \right)=0$.
 The stress deviator is given by
 \begin{equation}
-\bfs \equiv {\bfsigma} - \frac{1}{3}\left( {{\bfsigma}:{\mathbf{I}}} \right){\mathbf{I}} = {\mathbb{I}_d}:{\bfsigma},
+\bfs \equiv {\bfsigma} - \frac{1}{3}\left( {{\bfsigma}:{\mathbf{I}}} \right){\mathbf{I}} = {\mathbb{I}_{\rm d}}:{\bfsigma},
 \end{equation}
-where ${\mathbb{I}_d} = \mathbb{I} - \frac{1}{3}{\mathbf{I}} \otimes {\mathbf{I}}$ is the deviatoric projection tensor.
+where ${\mathbb{I}_{\rm d}} = \mathbb{I} - \frac{1}{3}{\mathbf{I}} \otimes {\mathbf{I}}$ is the deviatoric projection tensor.
 Taking the deviatoric part of Eq. (\ref{Equ:sigma1}) follows
 \begin{equation}\label{Equ:sminusa1}
-{\bfs} = \bfs^{tr} - 2G\Delta \bfepsilon^p.
+{\bfs} = \bfs^{\rm tr} - 2G\Delta \bfepsilon^{\rm p}.
 \end{equation}
 
 \begin{figure}[!htp]
@@ -594,46 +604,46 @@ A two steps radial return map method proposed by  Kobayashi and Ohno \cite{kobay
 Then the tentative form of the backstress is determined from
 \begin{equation}
 \label{Equ:btrn+1}
-\bfb^{k,tr} = \bfb_n^k + \frac{2}{3}{\zeta ^k}\Delta \bfepsilon^p.
+\bfb^{k,\rm{tr}} = \bfb_n^k + \frac{2}{3}{\zeta ^k}\Delta \bfepsilon^{\rm p}.
 \end{equation}
 Therefore, the normalized backstress $\bfb^k$ can be written as
 \begin{equation}
 \label{Equ:bn+1}
-\bfb^k = \theta ^k\left( {\bfb_n^k + \frac{2}{3}{\zeta ^k}\Delta \bfepsilon^p} \right) = \theta ^k\bfb^{k,tr},
+\bfb^k = \theta ^k\left( {\bfb_n^k + \frac{2}{3}{\zeta ^k}\Delta \bfepsilon^{\rm p}} \right) = \theta ^k\bfb^{k,\rm{tr}},
 \end{equation}
 where $\theta ^k$ is defined by
 \begin{equation}
 \label{Equ:thetan+1}
-\theta ^k = c^k + H\left( {\bar f^k} \right)\left( {\frac{1}{{\bar b^{k,tr}}} - c^k} \right)
+\theta ^k = c^k + H\left( {\bar f^k} \right)\left( {\frac{1}{{\bar b^{k,\rm{tr}}}} - c^k} \right)
 \end{equation}
  and satisfies $0 < \theta ^k \leqslant 1$. Above $c^k$ and ${\bar f^k}$ are given through
 \[
 c^k = \frac{1}{{1 + {\zeta ^k}\mu \Delta {p} - \frac{{\Delta r^k}}{{r^k}}}},
 \]
 \[
-\bar f^k = {\left( {c^k\bar b^{k,tr}} \right)^2} - 1,
+\bar f^k = {\left( {c^k\bar b^{k,\rm{tr}}} \right)^2} - 1,
 \]
 with
 \[
-\bar b^{k,tr} = \sqrt {\frac{3}{2}\bfb^{k,tr}:\bfb^{k,tr}}.
+\bar b^{k,\rm{tr}} = \sqrt {\frac{3}{2}\bfb^{k,\rm{tr}}:\bfb^{k,\rm{tr}}}.
 \]
 Substituting ${\bfa}$ into Eq. (\ref{Equ:sminusa1}) follows
 \begin{eqnarray}
 \label{Equ:sminusa2}
 %\begin{aligned}
 {{\bfs} - {\bfa}}&=&
-\bfs^{tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k}
+\bfs^{\rm tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k}
 \\ \nonumber
-&-& \left( {2G + \frac{2}{3}\sum\limits_{k = 1}^M {r^k\theta ^k{\zeta ^k}} } \right)\Delta \bfepsilon^p.
+&-& \left( {2G + \frac{2}{3}\sum\limits_{k = 1}^M {r^k\theta ^k{\zeta ^k}} } \right)\Delta \bfepsilon^{\rm p}.
 %\end{aligned}
 \end{eqnarray}
 From the yield function and the flow rule it is obtained finally
 \begin{equation}
-\Delta {p} = \frac{{\sqrt {\frac{3}{2}} \left\| {\bfs^{tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}} + 3G + \sum\limits_{k = 1}^M {r^k\theta ^k{\zeta ^k}} }}
+\Delta {p} = \frac{{\sqrt {\frac{3}{2}} \left\| {\bfs^{\rm tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k} } \right\| - {Y_n}}}{{{{\left( {\frac{{\partial Y}}{{\partial p}}} \right)}} + 3G + \sum\limits_{k = 1}^M {r^k\theta ^k{\zeta ^k}} }}
 \end{equation}
 and
 \begin{equation}
-{\bfs} - {\bfa} = \frac{{{Y}\left( {\bfs^{tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k} } \right)}}{{\sqrt {\frac{3}{2}} \left\| {\bfs^{tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k} } \right\|}}.
+{\bfs} - {\bfa} = \frac{{{Y}\left( {\bfs^{\rm tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k} } \right)}}{{\sqrt {\frac{3}{2}} \left\| {\bfs^{\rm tr} - \sum\limits_{k = 1}^M {r^k\theta ^k\bfb_n^k} } \right\|}}.
 \end{equation}
 
 
@@ -654,11 +664,11 @@ where $E$ is  Young's modulus and $\nu$ is Poisson's ratio, depending on tempera
 
 By neglecting the plastic strain amplitude effect, ${\zeta ^k}$ and  $r_0^k$ can be determined using the following equations \cite{Jiang1996387, jiang1996modeling}, if no isotropic hardening is assumed,
 \begin{equation}
-{\zeta ^k} = \frac{1}{{\varepsilon _p^k}},
+{\zeta ^k} = \frac{1}{{\varepsilon _{\rm p}^k}},
 \label{Eqn:zetak}
 \end{equation}
 \begin{equation}
-r_0^k = \left( {\frac{{\sigma _{}^k - \sigma _{}^{k - 1}}}{{\varepsilon _p^k - \varepsilon _p^{k - 1}}} - \frac{{\sigma _{}^{k + 1} - \sigma _{}^k}}{{\varepsilon _p^{k + 1} - \varepsilon _p^k}}} \right)\varepsilon _p^k,
+r_0^k = \left( {\frac{{\sigma _{}^k - \sigma _{}^{k - 1}}}{{\varepsilon _{\rm p}^k - \varepsilon _{\rm p}^{k - 1}}} - \frac{{\sigma _{}^{k + 1} - \sigma _{}^k}}{{\varepsilon _{\rm p}^{k + 1} - \varepsilon _{\rm p}^k}}} \right)\varepsilon _{\rm p}^k,
 \end{equation}
 where $\sigma^k$ and $\varepsilon_p^k( k = 0,1,2,...,M+1 )$ denote the stress and plastic strain at the $k$th point on the monotonic  stress-plastic strain curve, respectively. $\sigma^0$ is the initial yield stress related to the zero plastic strain $\varepsilon_p^0=0$. Generally, the uniaxial tensile stress-strain curve is represented in $M$ intervals.
 
@@ -667,29 +677,29 @@ The half fatigue life cycle is assumed to be the stabilized hysteresis loop.
 
 By combining Eqs. (\ref{Equ:rk1}) and (\ref{Equ:rdeltak1}), $r^k$ can be expressed as
 \begin{equation}\label{rk}
-{r^k} = r_0^k + r_{\Delta s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right],
+{r^k} = r_0^k + r_{\Delta \rm s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right],
 \end{equation}
-where $r_{\Delta s}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ are constants and $p$ is the accumulated plastic strain.
-The saturated value of $r^k$ is denoted as $r^k_s$ and the saturated increment value of $r^k$ is denoted as $r^k_{\Delta s}$.
-A simple procedure for determining the material constants $r_{\Delta s}^k$ was by assuming that $p$ is infinitely large,
+where $r_{\Delta \rm s}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ are constants and $p$ is the accumulated plastic strain.
+The saturated value of $r^k$ is denoted as $r^k_{\rm s}$ and the saturated increment value of $r^k$ is denoted as $r^k_{\Delta \rm s}$.
+A simple procedure for determining the material constants $r_{\Delta \rm s}^k$ was by assuming that $p$ is infinitely large,
 \begin{equation}
-r_s^k=\mathop {\lim }\limits_{{\rm{p}} \to \infty } {r^k} = r_0^k + r_{\Delta s}^k.
+r_{\rm s}^k=\mathop {\lim }\limits_{{\rm{p}} \to \infty } {r^k} = r_0^k + r_{\Delta \rm s}^k.
 \label{Equ:rsk}
 \end{equation}
 Generally, when the cyclic hardening/softening is stabilized, the accumulated plastic strain is large.
-Consequently, the data in the stabilized hysteresis loop can be used to determine the saturated values $r^k_s$ and $r^k_{\Delta s}$.
+Consequently, the data in the stabilized hysteresis loop can be used to determine the saturated values $r^k_{\rm s}$ and $r^k_{\Delta \rm s}$.
 
-The calculated alternating stress-strain curve was divided into $M=9$ segments with the same plastic strain for both monotonic and cyclic stress-strain curve.  $\zeta^k$ and $r_0^k$ can be determined from monotonic tension test as suggested by Jiang and Kurath \cite{Jiang1996387}. From the calculated alternating stress-strain curve the same procedure for $\zeta^k$ and $r_0^k$ is used to determine the saturated values $r^k_s$ and $r^k_{\Delta s}$.  $r^k$ is determined from the uniaxial stabilized hysteresis loop curve following Eq. (\ref{rk}). ${\zeta ^k}$ for the cyclic stress-strain relation is the same as that for the monotonic case.
+The calculated alternating stress-strain curve was divided into $M=9$ segments with the same plastic strain for both monotonic and cyclic stress-strain curve.  $\zeta^k$ and $r_0^k$ can be determined from monotonic tension test as suggested by Jiang and Kurath \cite{Jiang1996387}. From the calculated alternating stress-strain curve the same procedure for $\zeta^k$ and $r_0^k$ is used to determine the saturated values $r^k_{\rm s}$ and $r^k_{\Delta \rm s}$.  $r^k$ is determined from the uniaxial stabilized hysteresis loop curve following Eq. (\ref{rk}). ${\zeta ^k}$ for the cyclic stress-strain relation is the same as that for the monotonic case.
 
 %\begin{figure}[!htp]
 %\centering{\includegraphics[width=8.5cm]{Determine_rsk.pdf}}
-%\caption{IN718 uniaxial monotonic tensile and calculated alternating stress versus plastic strain curves used to determine the material constants $r_s^k$ and $r_{\Delta s}^k$ at 650$^{\circ}$C.}
+%\caption{IN718 uniaxial monotonic tensile and calculated alternating stress versus plastic strain curves used to determine the material constants $r_{\rm s}^k$ and $r_{\Delta \rm s}^k$ at 650$^{\circ}$C.}
 %\label{Fig:Determine_rsk}
 %\end{figure}
 
 As discussed above, both monotonic tension curve and the stabilized alternating stress-strain curve are used for identifying the model parameters.
-$r_{\Delta s}^k$ is describing the deviation magnitude of the two curves and $a_{1}^k$, $b_{1}^k$ and $a_{2}^k$ are used to describe the softening rate of the material.
-$a_1^k$, $b_1^k$, $a_2^k$, $b_2^k$, $b_3^k$ are determined from the history curve of the peak stress under uniaxial cyclic loading. For simplicity, the cyclic softening is assumed to be purely kinematic under uniaxial loading conditions, as introduced by Ohno et al. \cite{Ohno1993375}.
+$r_{\Delta \rm s}^k$ is describing the deviation magnitude of the two curves and $a_{1}^k$, $b_{1}^k$ and $a_{2}^k$ are used to describe the softening rate of the material.
+$a_1^k$, $b_1^k$, $b_2^k$ are determined from the history curve of the peak stress under uniaxial cyclic loading. For simplicity, the cyclic softening is assumed to be purely kinematic under uniaxial loading conditions, as introduced by Ohno et al. \cite{Ohno1993375}.
 $a_{1}^k$, $b_{1}^k$ and $b_{2}^k$ are independent of $k$, i.e. all segments share the same values, $a_1, b_2$ and $b_2$.
 Thus, the parameters can be determined from the cyclic stress-strain curve,
 \begin{equation}
@@ -697,13 +707,13 @@ Thus, the parameters can be determined from the cyclic stress-strain curve,
 \end{equation}
 The relation provides optimal agreement between experimental curve and model, as shown in Fig.  \ref{Fig:Fitting300C_7041_Plot}. Fang \cite{fang2015cyclic} proposed a simplified model as
 \begin{equation}
-r_\Delta ^k = r_{\Delta s}^k\left( 1 - a_1^k{e^{ - b_1^kp}}\right).
+r_\Delta ^k = r_{\Delta \rm s}^k\left( 1 - a_1^k{e^{ - b_1^kp}}\right).
 \label{Equ:fangrdeltak}
 \end{equation}
 Results in Fig. \ref{Fig:Fitting300C_7041_Plot} reveal significant deviations between the two different expressions above at small plastic strain region.
 
-$Y_{\Delta NS}$, $\gamma_p$ and $\gamma_q$ are fitted from the stabilized non-proportional cyclic stress-strain curve.
- $\mu$ and $c_c$ take the values proposed by Chaboche \cite{Chaboche1986149} and Tanaka \cite{tanaka1994nonproportionality}.
+$Y_{\Delta \rm NS}$, $\gamma_{\rm p}$ and $\gamma_{\rm q}$ are determined from the stabilized non-proportional cyclic stress-strain curve by a optimization algorithm.
+$\mu$ and $c_c$ take the values proposed by Chaboche \cite{Chaboche1986149} and Tanaka \cite{tanaka1994nonproportionality}.
 
 %\begin{figure}[!htp]
 %\centering{\includegraphics[width=8.5cm]{EpVsPeakStress300C_7041.pdf}}
@@ -722,8 +732,53 @@ $Y_{\Delta NS}$, $\gamma_p$ and $\gamma_q$ are fitted from the stabilized non-pr
 \subsection{Temperature-dependent parameters}
 \noindent
 In this section, the model parameters are determined under isothermal conditions.
-According to isothermal uniaxial monotonic tension tests and  cyclic stress-strain hysteresis curves at different temperatures, the material constants at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C are identified and summarized in Table \ref{tab:Basic_property} and Table \ref{tab:3} with $M=9$. The temperature dependence of the parameters  is linearly interpolated in intervals.
-%The identification of the material parameters $\zeta^k$, $r_0^k$, $r_{\Delta s}^k$ $E$, $\mu$, $\sigma_{p=0.2}$
+According to isothermal uniaxial monotonic tension tests and  cyclic stress-strain hysteresis curves at different temperatures, the material constants at 300$^{\circ}$C, 550$^{\circ}$C and 650$^{\circ}$C are identified and summarized in Table \ref{tab:Basic_property} and Table \ref{tab:3} with $M=9$. 
+
+In the present constitutive model, the parameters $\mu$, $\gamma_{\rm{p}}$, $\gamma_{\rm{q}}$, $Y_{\Delta {\rm{sat}}}$ and $c_c$ are assumed to be temperature independent, while the parameters $E$, $\nu$, $r_0^k$, $r_{\Delta \rm{s}}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ are considered as the temperature dependent parameters.
+
+The temperature dependent parameters $r_0^k$, $r_{\Delta \rm{s}}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ in the present constitutive model are plotted in \ref{Fig:plot_umat_parameters}. In \ref{Fig:plot_umat_parameters}(a) and (b), the parameters $r_0^k$ and $r_{\Delta \rm{s}}^k$ show a monotonic decrease with the temperature increase. And as shown in \ref{Fig:plot_umat_parameters}(c) and (d), $a_1^k$ increases with the increasing temperature while $b_1^k$ decreases with the increasing temperature and the variation of $b_2^k$ with temperature are not monotonous.
+
+Becker and Hackenberg \cite{Becker2011596} proposed that the temperature dependent parameters $p_T$ can be interpolated between $T_1$ and $T_2$ according to
+\[p_T = {10^{{{\log }_{10}}\left[ {{p_{{T_1}}}} \right] + \frac{{{{\log }_{10}}\left[ {{p_{{T_1}}}/{p_{{T_2}}}} \right]}}{{{{\log }_{10}}\left[ {{T_2}/{T_1}} \right]}}{{\log }_{10}}\left[ {T/{T_1}} \right]}},\]
+where ${{p_{{T_1}}}}$ is the parameter value at $T_1$ and ${{p_{{T_2}}}}$ is the parameter value at $T_2$.
+
+However, in the present constitutive model, the linear relationship can be observed between the most parameters and temperature, as shown in \ref{Fig:plot_umat_parameters}. Therefore, the temperature dependence of the parameters is suggested to be linearly interpolated in intervals. For an intermediate temperature $T$, the temperature dependent parameters $p_T$ are given by
+\[{p_T} = {p_{{T_1}}} + \frac{{{p_{{T_2}}} - {p_{{T_1}}}}}{{{T_2} - {T_1}}}{T}.\]
+
+In order to verify whether the model parameters calculated by the linear interpolation method are appropriate, a tension-compression isothermal fatigue test was carried out at 400$^\circ$C with the strain range of $\pm1.0\%$.
+\ref{Fig:plot_cmp_TCIF400} shows the computational stress-strain response and peak-valley stress curve at the intermediate temperature $T=400^\circ$C by using the linearly interpolated temperature dependent parameters. The computational result shows a good agreement with the experimental result. Consequently, the linear interpolation method is used in the following computations.
+
+\begin{figure*}
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_umat_parameters_r0k.pdf}
+    \put(20,14){(a)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_umat_parameters_rdeltak.pdf}
+    \put(20,14){(b)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_umat_parameters_a1.pdf}
+    \put(20,14){(c)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_umat_parameters_b1b2.pdf}
+    \put(20,14){(d)}
+  \end{overpic}
+  \caption{Model parameters vs. temperature: (a) $r_0^k$, (b) $r_{\Delta \rm{s}}^k$, (c) $a_1^k$, (d) $b_1^k$ and $b_2^k$.}
+  \label{Fig:plot_umat_parameters}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \begin{overpic}[width=8.0cm]{plot_cmp_half_life_cycle_TCIF400.pdf}
+    \put(84,14){(a)}
+  \end{overpic}
+  \begin{overpic}[width=8.0cm]{plot_cmp_pv_TCIF400.pdf}
+    \put(84,14){(b)}
+  \end{overpic}
+  \caption{Comparison of the experimental and computational stress-strain response at 400$^\circ$C by using the interpolated temperature dependent parameters. (a) The stress-strain hysteresis loop at the $N_{\rm{f}}/2$ cycle. (b) Peak and valley stress values.}
+  \label{Fig:plot_cmp_TCIF400}
+\end{figure*}
+
+%The identification of the material parameters $\zeta^k$, $r_0^k$, $r_{\Delta \rm s}^k$ $E$, $\mu$, $\sigma_{p=0.2}$
 
 
 %\begin{figure}
@@ -758,7 +813,7 @@ According to isothermal uniaxial monotonic tension tests and  cyclic stress-stra
 %    \hline
 %          &       & \multicolumn{2}{c}{300$^{\circ}$C} & \multicolumn{2}{c}{550$^{\circ}$C} & \multicolumn{2}{c}{650$^{\circ}$C} \\
 %    \hline
-%    $k$   & $\zeta^k$ & $r_0^k$ & $r_{\Delta s}^k$ & $r_0^k$ & $r_{\Delta s}^k$ & $r_0^k$ & $r_{\Delta s}^k$ \\
+%    $k$   & $\zeta^k$ & $r_0^k$ & $r_{\Delta \rm s}^k$ & $r_0^k$ & $r_{\Delta \rm s}^k$ & $r_0^k$ & $r_{\Delta \rm s}^k$ \\
 %    1     & 20000 & 292.65  & -37.83  & 242.66  & -100.14  & 227.08  & -139.00  \\
 %    2     & 10000 & 60.11  & -10.89  & 57.06  & -13.56  & 54.94  & -15.16  \\
 %    3     & 5000  & 74.70  & -14.30  & 71.17  & -17.29  & 68.47  & -18.98  \\
@@ -772,7 +827,7 @@ According to isothermal uniaxial monotonic tension tests and  cyclic stress-stra
 %    \multicolumn{8}{l}{300$^{\circ}$C,$a_1^k$=0.4,$b_1^k$=1.27,$b_2^k$=9.45} \\
 %    \multicolumn{8}{l}{550$^{\circ}$C,$a_1^k$=0.41,$b_1^k$=0.87,$b_2^k$=11.8} \\
 %    \multicolumn{8}{l}{650$^{\circ}$C,$a_1^k$=0.42,$b_1^k$=0.49,$b_2^k$=9.18} \\
-%    \multicolumn{8}{l}{$\mu=0.2$,$\gamma_p$=10,$\gamma_q$=50,$Y_{\Delta NS}$=100,$c_c$=50} \\
+%    \multicolumn{8}{l}{$\mu=0.2$,$\gamma_{\rm p}$=10,$\gamma_{\rm q}$=50,$Y_{\Delta \rm NS}$=100,$c_c$=50} \\
 %    \hline
 %    \end{tabular}%
 %  \label{tab:3}%
@@ -788,18 +843,18 @@ According to isothermal uniaxial monotonic tension tests and  cyclic stress-stra
           & $\zeta^k$ & 20000 & 10000 & 5000  & 2000  & 1000  & 500   & 250   & 100   & 50 \\
     \hline
     300$^{\circ}$C & $r_0^k$ & 292.65  & 60.11  & 74.70  & 89.45  & 82.86  & 91.27  & 113.42  & 135.81  & 140.01  \\
-          & $r_{\Delta s}^k$ & -37.83  & -10.89  & -14.30  & -18.06  & -17.20  & -20.20  & -26.21  & -32.72  & -32.38  \\
+          & $r_{\Delta \rm s}^k$ & -37.83  & -10.89  & -14.30  & -18.06  & -17.20  & -20.20  & -26.21  & -32.72  & -32.38  \\
           & & \multicolumn{9}{l}{$a_1^k$=0.4, $b_1^k$=1.27, $b_2^k$=9.45, $k$=1 to 9} \\
     \hline
     550$^{\circ}$C & $r_0^k$ & 242.66  & 57.06  & 71.17  & 85.54  & 79.54  & 87.90  & 109.64  & 131.78  & 136.93  \\
-          & $r_{\Delta s}^k$ & -100.14  & -13.56  & -17.29  & -21.23  & -20.15  & -22.68  & -28.84  & -35.34  & -33.02  \\
+          & $r_{\Delta \rm s}^k$ & -100.14  & -13.56  & -17.29  & -21.23  & -20.15  & -22.68  & -28.84  & -35.34  & -33.02  \\
           & & \multicolumn{9}{l}{$a_1^k$=0.41, $b_1^k$=0.87, $b_2^k$=11.8, $k$=1 to 9} \\
     \hline
     650$^{\circ}$C & $r_0^k$ & 227.08  & 54.94  & 68.47  & 82.22  & 76.38  & 84.34  & 105.11  & 126.21  & 130.89  \\
-          & $r_{\Delta s}^k$ & -139.00  & -15.16  & -18.98  & -22.89  & -21.36  & -23.68  & -29.65  & -35.76  & -32.75  \\
+          & $r_{\Delta \rm s}^k$ & -139.00  & -15.16  & -18.98  & -22.89  & -21.36  & -23.68  & -29.65  & -35.76  & -32.75  \\
           & & \multicolumn{9}{l}{$a_1^k$=0.42, $b_1^k$=0.49, $b_2^k$=9.18, $k$=1 to 9} \\
     \hline
-          & & \multicolumn{9}{l}{$\mu=0.2$,$\gamma_p$=10,$\gamma_q$=50,$Y_{\Delta NSs}$=100,$c_c$=50} \\
+          & & \multicolumn{9}{l}{$\mu=0.2$,$\gamma_{\rm p}$=10,$\gamma_{\rm q}$=50,$Y_{\Delta NSs}$=100,$c_c$=50} \\
     \hline
     \end{tabular}%
   \label{tab:3}%
@@ -830,7 +885,7 @@ The strain controlled loop consists of initial loading, unloading and reverse lo
 As shown in Fig. \ref{Fig:200th_Exp_Sim}(a), in the initial loading cycle the computational and experimental loops are in reasonable agreement, but deviations are observed during reverse plastic loading for the lower temperatures because the kinematic hardening variable $r^k$ approximates ${r_0^k}$ in the first loading loop.
 Note that the kinematic hardening variable ${r_0^k}$ is obtained from monotonic tension tests and evolution of $r^k$ depends on the accumulated plastic strain $p$.
 During the first reverse plastic loading, the accumulated plastic strain $p$ is small, so the first simulated stress-strain hysteresis loops are mainly based on the monotonic curve. It leads to the deviation in the computation from the experimental result.
-Along with loading and unloading cycles, with the evolution of $r_s^k$ (Eq. (\ref{Equ:rsk})), the predicted responses approach the experimental curves and the agreement of the 200th cycle becomes optimal, as shown in \ref{Fig:200th_Exp_Sim}(b). Since the fatigue is determined mainly by the peak and valley values, such deviations will not change fatigue life assessment.
+Along with loading and unloading cycles, with the evolution of $r_{\rm s}^k$ (Eq. (\ref{Equ:rsk})), the predicted responses approach the experimental curves and the agreement of the 200th cycle becomes optimal, as shown in \ref{Fig:200th_Exp_Sim}(b). Since the fatigue is determined mainly by the peak and valley values, such deviations will not change fatigue life assessment.
 
 
 \begin{figure}
@@ -853,7 +908,7 @@ Along with loading and unloading cycles, with the evolution of $r_s^k$ (Eq. (\re
 
 
 More details from the experiments and computations reveal that the material is cyclic softening, as shown in Fig. \ref{Fig:Compare_PACC-PV_stress_temperature}, where the stress peak and valley values from the uniaxial cyclic tension test are summarized. The softening behavior becomes more severe as temperature increases.
-As mentioned earlier, in the present constitutive relation, cyclic softening is modeled by the kinematic hardening variable $r^k$, with its saturation value $r_s^k$ smaller than its initial value $r_0$.
+As mentioned earlier, in the present constitutive relation, cyclic softening is modeled by the kinematic hardening variable $r^k$, with its saturation value $r_{\rm s}^k$ smaller than its initial value $r_0$.
 The figure confirms a good agreement between experiments and the constitutive model prediction in the whole loading and unloading cycles.
 
 
@@ -1039,7 +1094,7 @@ Multi-axial thermo-mechanical material behavior were not studied systematically 
 
 In both tests, the temperature varies between 300 and 650$^{\circ}$C, the equivalent mechanical strain amplitude $\varepsilon_{eq,a}=1\%$, the phase angle between axial strain and temperature is zero degree for the in-phase loading (IP).
 The torsional and axial stress curve reveals cyclic softening for all tested multi-axial loading cases.
-Computations were performed with the non-proportional hardening factor $Y_{\rm sat}=0$MPa and $Y_{\rm sat}=200$MPa, respectively, to demonstrate the influence of the non-proportional correction to the computational results.
+Computations were performed with the non-proportional hardening factor $Y_{\rm \Delta nps}=0$MPa and $Y_{\rm \Delta nps}=200$MPa, respectively, to demonstrate the influence of the non-proportional correction to the computational results.
 
 As shown in Fig. \ref{Fig:TMF_Prop45}, the proportional loading case provides good agreement between the computation and experiment in the peak value distribution, while the valley values show a similar deviation as observed in isothermal loading. The shifting in the shear stress-normal stress loop is caused by the under-estimate of the compressive normal stress. Generally, computations agree with the experiments reasonably. The non-proportional hardening factor does not effect the computational results, as expected.
 
