@@ -67,9 +67,11 @@
 % \renewcommand{\figurename}{\textbf{Fig.}}
 % \renewcommand{\captionlabeldelim}{.}
 
-% \graphicspath{{figures/}}
-\graphicspath{{figures/}{F:/Cloud/GitHub/tmf/figs/}{F:/Cloud/GitHub/doctor/figs/}{F:/Cloud/GitHub/doctor/figs/python/}{F:/Cloud/GitHub/doctor/figs/ppt/}{F:/Cloud/GitHub/doctor/figs/svg/}{F:/Cloud/GitHub/doctor/figs/sem/}}
-%\bibliographystyle{elsarticle-num}
+\graphicspath{{figures/}}
+% \graphicspath{{F:/Cloud/GitHub/tmf/figs/}{F:/Cloud/GitHub/doctor/figs/}{F:/Cloud/GitHub/doctor/figs/python/}{F:/Cloud/GitHub/doctor/figs/ppt/}{F:/Cloud/GitHub/doctor/figs/svg/}{F:/Cloud/GitHub/doctor/figs/sem/}}
+% \graphicspath{{F:/Cloud/GitHub/doctor/figs/}{F:/Cloud/GitHub/doctor/figs/python/}{F:/Cloud/GitHub/doctor/figs/ppt/}{F:/Cloud/GitHub/doctor/figs/svg/}{F:/Cloud/GitHub/doctor/figs/origin/}}
+
+% \bibliographystyle{elsarticle-num}
 
 \journal{International Journal of Fatigue}
 
@@ -555,7 +557,9 @@ According to Ref. \cite{fang2015cyclic}, the evolution of ${Y_{\Delta \rm NS}}$ 
 Noting that the strain memory effect is taken into account, $q$ is the radius of strain memory surface, ${\gamma _{\rm q}}$ is a rate parameter.
 If the material satisfies the Masing postulate,  ${\gamma _{\rm q}}=0$. $Y_{\Delta \rm sat} $ denotes the saturate value of $Y_{\Delta \rm NS}$.
 
-\subsection{Integration algorithm of the constitutive equations}
+\subsection{Summary of the constitutive model}
+\noindent
+The initial Ohno-Wang model cannot describe the mechanical behavior of the Nickel-based superalloy Inconel 718 in non-Masing behavior, cyclic softening and non-proportional hardening. In the proposed constitutive model, $r^k$ is suggested as the function of accumulated plastic strain (Eq. (\ref{rk})), which can reasonably describe cyclic softening, and the term $H\left( {f^k} \right)\frac{\bfa^k}{r^k}{\dot r^k}$ is used to consider the influence of ${\dot r^k}$. The Tanaka's non-proportionality factor is used to consider the non-proportional hardening behavior.
 
 \section{Integration algorithm of the constitutive equations}
 \noindent
@@ -676,7 +680,8 @@ In the constitutive model, the saturated value of $r^k$ has to be determined fro
 The half fatigue life cycle is assumed to be the stabilized hysteresis loop.
 
 By combining Eqs. (\ref{Equ:rk1}) and (\ref{Equ:rdeltak1}), $r^k$ can be expressed as
-\begin{equation}\label{rk}
+\begin{equation}
+\label{rk}
 {r^k} = r_0^k + r_{\Delta \rm s}^k\left[ {1 - a_1^k{e^{ - b_1^kp}} - (1-a_1^k){e^{ - b_2^kp}} }\right],
 \end{equation}
 where $r_{\Delta \rm s}^k$, $a_1^k$, $b_1^k$ and $b_2^k$ are constants and $p$ is the accumulated plastic strain.
@@ -726,7 +731,6 @@ $\mu$ and $c_c$ take the values proposed by Chaboche \cite{Chaboche1986149} and 
 \caption{Kinematic hardening from the full reversed strain cycling tests with comparison to different hardening models of $r^k$.}
 \label{Fig:Fitting300C_7041_Plot}
 \end{figure}
-
 
 
 \subsection{Temperature-dependent parameters}
@@ -885,7 +889,7 @@ The strain controlled loop consists of initial loading, unloading and reverse lo
 As shown in Fig. \ref{Fig:200th_Exp_Sim}(a), in the initial loading cycle the computational and experimental loops are in reasonable agreement, but deviations are observed during reverse plastic loading for the lower temperatures because the kinematic hardening variable $r^k$ approximates ${r_0^k}$ in the first loading loop.
 Note that the kinematic hardening variable ${r_0^k}$ is obtained from monotonic tension tests and evolution of $r^k$ depends on the accumulated plastic strain $p$.
 During the first reverse plastic loading, the accumulated plastic strain $p$ is small, so the first simulated stress-strain hysteresis loops are mainly based on the monotonic curve. It leads to the deviation in the computation from the experimental result.
-Along with loading and unloading cycles, with the evolution of $r_{\rm s}^k$ (Eq. (\ref{Equ:rsk})), the predicted responses approach the experimental curves and the agreement of the 200th cycle becomes optimal, as shown in \ref{Fig:200th_Exp_Sim}(b). Since the fatigue is determined mainly by the peak and valley values, such deviations will not change fatigue life assessment.
+Along with loading and unloading cycles, with the evolution of $r_{\rm s}^k$ (Eq. (\ref{Equ:rsk})), the predicted responses approach the experimental curves and the agreement of the 200th cycle becomes optimal, as shown in Fig. \ref{Fig:200th_Exp_Sim}(b). Since the fatigue is determined mainly by the peak and valley values, such deviations will not change fatigue life assessment.
 
 
 \begin{figure}
@@ -1084,7 +1088,7 @@ As shown by Gil \cite{Gil1998}, the yield surface of Inconel 718 is a shift to t
 % \centering{\includegraphics[width=8.5cm]{IN718_TMF_7037_Diamond+-1_20th.pdf}}
 % \centering{\includegraphics[width=8.5cm]{IN718_TMF_IP_Diamond+-1_Exp_vs_Sim_PV_Axial.pdf}}
 % \centering{\includegraphics[width=8.5cm]{IN718_TMF_IP_Diamond+-1_Exp_vs_Sim_PV_Torsional.pdf}}
-\caption{Experimental and computational results for the diamond strain path under in-phase thermo-mechanical loading conditions with varying temperature between  300 and 650$^{\circ}$C. (a) The first loading cycle. (b) The half life loading cycle. (c) Axial peak-valley normal stress as function of loading cycles. (d) Torsional peak-valley shear stress as function of  loading cycles.}
+\caption{Experimental and computational results for the diamond strain path under in-phase thermo-mechanical loading conditions with varying temperature between 300 and 650$^{\circ}$C. (a) The first loading cycle. (b) The half life loading cycle. (c) Axial peak-valley normal stress as function of loading cycles. (d) Torsional peak-valley shear stress as function of  loading cycles.}
 \label{Fig:TMF_Diamond}
 \end{figure*}
 
